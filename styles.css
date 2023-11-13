@@ -6,16 +6,18 @@
 
 }
 body {
-    max-height: 100%;
-    background: linear-gradient(#36b7e7,#4f57ce,#d164b3);
-    font-family: var(--font-1);
-    text-align: center;
-    margin: 50px;
-    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    background-image: url('./images/batman.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed; 
+    font-family:var(--font-1);
+    color: white;
 }
 
 h1{
-    color: white    ;
+    color: #cee728   ;
 }
 
 #quiz-container {   
@@ -42,7 +44,6 @@ button {
     cursor: pointer;
 }
 
-/* Responsive Styles */
 @media screen and (max-width: 600px) {
     body {
         margin: 20px;
