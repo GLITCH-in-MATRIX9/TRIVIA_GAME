@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz@8..60&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+:root {
+    --font-1: 'Source Serif 4', serif;
+
+}
+body {
+    max-height: 100%;
+    background: linear-gradient(#36b7e7,#4f57ce,#d164b3);
+    font-family: var(--font-1);
+    text-align: center;
+    margin: 50px;
+    background-repeat: no-repeat;
+}
+
+h1{
+    color: white    ;
+}
+
+#quiz-container {   
+    max-width: 400px;
+    margin: auto;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+button {
+    font-family: var(--font-1);
+    border-radius:3px ;
+    font-size: 20px;
+    color: black ;
+    box-shadow: white;
+    background-color: white;
+    padding: 7px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+    body {
+        margin: 20px;
+    }
+
+    #quiz-container {
+        max-width: 100%;
+    }
+}
