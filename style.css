@@ -67,6 +67,16 @@ br{
   color: #fff; 
   border: 2px solid #fff; 
 }
+@media screen and (max-width: 320px) {
+  body {
+      background-image: url("./images/simp.jpg");
+      margin: 20px;
+  }
+
+  #quiz-container {
+      max-width: 100%;
+  }
+}
 
 
 

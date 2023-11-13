@@ -46,6 +46,7 @@ button {
 
 @media screen and (max-width: 600px) {
     body {
+        background-image: url(./images/batman\ -\ Copy.jpg);
         margin: 20px;
     }
 
