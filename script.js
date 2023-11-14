@@ -14,7 +14,7 @@ const questions = [
     {
         question: 'Which planet has the most CHAAND in our solar system?',
         options: ['Earth', 'Pluto', 'Jupiter', 'Saturn'],
-        correctAnswer: 'Jupiter'
+        correctAnswer: 'Saturn'
 
     },
     {
@@ -77,8 +77,8 @@ function startQuiz() {
 }
 
 function showQuestion() {
-    const currentQuestion = questions[currentQuestionIndex];
-    questionElement.textContent = currentQuestion.question;
+    const currentQuestion = questions[currentQuestionIndex];//takes the question from index 1,2,3,...
+    questionElement.textContent = currentQuestion.question;//gets the text element of that question
 
     optionsContainer.innerHTML = '';
     currentQuestion.options.forEach((option) => {
@@ -96,9 +96,9 @@ function checkAnswer(userAnswer) {
     options.forEach((option) => {
         option.disabled = true; // Disable all options to prevent further clicks
         if (option.textContent === currentQuestion.correctAnswer) {
-            option.style.backgroundColor = '#4CAF50'; // Green for correct answer
+            option.style.backgroundColor = '#7e9468'; // Green for correct answer
         } else {
-            option.style.backgroundColor = '#FF0000'; // Red for incorrect answers
+            option.style.backgroundColor = '#ae3736'; // Red for incorrect answers
         }
     });
 
