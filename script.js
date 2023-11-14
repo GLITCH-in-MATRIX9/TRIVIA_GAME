@@ -38,7 +38,7 @@ const questions = [
     {
         question: 'What is the name of the world’s longest river?',
         options: ['Mere aansu:(', 'Nile', 'beta(son)', 'Arabian-sea'],
-        correctAnswer: 'George Washington'
+        correctAnswer: 'Nile'
     
     },
     {
@@ -56,7 +56,7 @@ const questions = [
     {
         question: 'It was illegal for women to wear what in 19th century Florence?',
         options: ['Buttons', 'Confidence', 'Skirts', 'Hats'],
-        correctAnswer: 'Buttons (but 2nd one.....nvm)'
+        correctAnswer: 'Buttons'
     
     },
     {
@@ -68,7 +68,8 @@ const questions = [
 ];
 
 //the question index will move ahead with  the questions
-let currentQuestionIndex = 0;
+let currentQuestionIndex = 0; // Index of the current question
+
 let score = 0;
 
 function startQuiz() { 
@@ -90,14 +91,26 @@ function showQuestion() {
 
 function checkAnswer(userAnswer) {
     const currentQuestion = questions[currentQuestionIndex];
+    const options = document.querySelectorAll('#options-container button');
+
+    options.forEach((option) => {
+        option.disabled = true; // Disable all options to prevent further clicks
+        if (option.textContent === currentQuestion.correctAnswer) {
+            option.style.backgroundColor = '#4CAF50'; // Green for correct answer
+        } else {
+            option.style.backgroundColor = '#FF0000'; // Red for incorrect answers
+        }
+    });
 
     if (userAnswer === currentQuestion.correctAnswer) {
         score++;
         feedbackElement.textContent = 'Correct!';
+        
     } else {
-        feedbackElement.textContent = `Incorrect. The correct answer is ${currentQuestion.correctAnswer}.`;
+        feedbackElement.textContent = `It's  ${currentQuestion.correctAnswer}.`;
+        
     }
-
+    
     nextButton.disabled = false;
     disableOptions();
 }
@@ -120,7 +133,7 @@ function nextQuestion() {
 }
 
 function endQuiz() {
-    quizContainer.innerHTML = `<h2>Quiz Over!</h2><p>Your Score: ${score} out of ${questions.length}</p>`;
+    quizContainer.innerHTML = `<h2>Quiz Over!</h2><p>What a shame ! </p><p>Your Score: ${score} out of ${questions.length}</p>`;
 }
 
 // Start the quiz when the page loads
